@@ -1,0 +1,65 @@
+//
+//  peoplesafe-Prefix.pch
+//  PeopleSafity
+//
+//  Created by 何心晓 on 2018/10/22.
+//  Copyright © 2018年 Runkuyun. All rights reserved.
+//
+
+#ifndef peoplesafe_Prefix_pch
+#define peoplesafe_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define DLog(...)
+#endif
+
+
+#define kScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define kScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define kBGWhiteColor [UIColor colorWithWhite:0.9 alpha:1]
+/**
+ * 屏幕适配--iPhoneX全系
+ */
+#define kiPhoneXAll ([UIScreen mainScreen].bounds.size.height == 812 || [UIScreen mainScreen].bounds.size.height == 896)
+
+/**
+ * iPhoneX全系导航栏增加高度 (64->88)
+ */
+#define kiPhoneX_Top_Height (([UIScreen mainScreen].bounds.size.height == 812 || [UIScreen mainScreen].bounds.size.height == 896)?24:0)
+
+/**
+ * iPhoneX全系TabBar增加高度 (49->83)
+ */
+#define kiPhoneX_Bottom_Height  (([UIScreen mainScreen].bounds.size.height == 812 || [UIScreen mainScreen].bounds.size.height == 896)?34:0)
+//浅蓝色
+#define kBlueColor  [UIColor colorWithPatternImage:[UIImage imageNamed:@"blue"]]
+//青绿色
+#define kBlueGreenColor [UIColor colorWithRed:64.0/255 green:224.0/255 blue:208.0/255 alpha:1]
+
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "AFNetworking.h"
+#import "MBProgressHUD+Add.h"
+#import <MJRefresh/MJRefresh.h>
+#import "AvtionImageView.h"
+#import "DHHleper.h"
+#import "DBManager.h"
+
+#define url_header @"192.168.124.32:8089"
+#define kGetMyCarListURL [NSString stringWithFormat:@"http://%@/searchshops",url_header]
+#define kGetFindingCarURL @""
+#define kGetFoundCarURL @""
+#define kIntroduceURL @""
+#define kInstallURL @""
+#define kLoginURL @""
+#define kChangeUserInfoURL @""
+#define kRegistURL @""
+#define kChangePWDURL @""
+#define kLockAUnlockCarURL @""
+#define kGetCarTrailURl @""
+
+
+#endif /* peoplesafe_Prefix_pch */
