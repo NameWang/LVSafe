@@ -50,7 +50,7 @@
     copyRight.text=@"乐沃实业©www.lovai.com";
     [self.view addSubview:copyRight];
 }
--(void)contactUS{
+-(void)contactUS{//联系客服
     NSMutableString *str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"0371-666666"];
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:str]]) {
           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
